@@ -8,16 +8,12 @@ public class Game {
     }
     
     public String getWordToGuess() {
-        String wordToHide = this.word;
-        String [] splitWord = wordToHide.split("");
-        String firstLetter = splitWord[0];
-        Integer blankLength = splitWord.length - 1;
-
+        String [] splitWord = this.word.split("");
         StringBuilder sb = new StringBuilder("");
 
-        sb.append(firstLetter);
+        sb.append(splitWord[0]);
 
-        for(int i = 0; i < blankLength; ++i) {
+        for(int i = 0; i < splitWord.length - 1 ; ++i) {
             sb.append("_");
         }
 
@@ -26,6 +22,6 @@ public class Game {
     
     // public static void main(String args[]) {
     //     Game game = new Game("MAKERS");
-    //     System.out.println(game.word);
+    //     System.out.println(game.getWordToGuess());
     // }
 }
