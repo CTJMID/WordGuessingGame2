@@ -2,9 +2,11 @@ package game;
 
 public class Game {
     String word;
+    int turnsLeft = 10;
 
     public Game( String guessWord) {
-        word = guessWord;
+        this.word = guessWord;
+        
     }
     
     public String getWordToGuess() {
@@ -16,8 +18,11 @@ public class Game {
         for(int i = 0; i < splitWord.length - 1 ; ++i) {
             sb.append("_");
         }
-
         return sb.toString();
+    }
+
+    public Integer getRemainingAttempts() {
+        return this.turnsLeft;
     }
     
     // public static void main(String args[]) {
